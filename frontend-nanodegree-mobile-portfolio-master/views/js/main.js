@@ -502,8 +502,11 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  //Rather then having it consistently loop through calling it down the DOM, I used a variable.
+  var scrollerTop = (document.body.scrollTop / 1250);
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    //Instead of it looping through the DOM, it loops through a variable.
+    var phase = Math.sin((scrollerTop) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
