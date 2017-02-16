@@ -9,7 +9,7 @@
 
     <link href="css/style.css" rel="stylesheet">
     <link href="css/print.css" rel="stylesheet">
-    <script async src="js/perfmatters.js"></script>
+    <!--<script async src="js/perfmatters.js"></script>-->
   </head>
 
   <body>
@@ -56,4 +56,16 @@
       </footer>
     </div>
   </body>
+  <script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "./js/perfmatters.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
 </html>
